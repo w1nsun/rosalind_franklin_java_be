@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: customer_management_api
+
+  liquibase:
+    enabled: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/customer_management
+    username: postgres
+    password: example
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+
+server:
+  port: 8081
